@@ -5,18 +5,20 @@
 package financials;
 
 import business.*;
-import org.jdesktop.application.Action;
-import org.jdesktop.application.ResourceMap;
-import org.jdesktop.application.SingleFrameApplication;
-import org.jdesktop.application.FrameView;
-import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
-import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
+import org.jdesktop.application.Action;
+import org.jdesktop.application.FrameView;
+import org.jdesktop.application.ResourceMap;
+import org.jdesktop.application.SingleFrameApplication;
+import org.jdesktop.application.TaskMonitor;
 
 /**
  * The application's main frame.
@@ -196,6 +198,11 @@ public class FinancialsView extends FrameView {
         jBtnSched.setText(resourceMap.getString("jBtnSched.text")); // NOI18N
         jBtnSched.setEnabled(false);
         jBtnSched.setName("jBtnSched"); // NOI18N
+        jBtnSched.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSchedActionPerformed(evt);
+            }
+        });
 
         jBtnClear.setText(resourceMap.getString("jBtnClear.text")); // NOI18N
         jBtnClear.setName("jBtnClear"); // NOI18N
@@ -229,15 +236,11 @@ public class FinancialsView extends FrameView {
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(56, 56, 56))
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(3, 3, 3)))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(56, 56, 56)
                         .addComponent(jradAnnuity)
                         .addGap(54, 54, 54)
                         .addComponent(jradLoan))
@@ -422,6 +425,39 @@ public class FinancialsView extends FrameView {
            
 
     }//GEN-LAST:event_jBtnClearActionPerformed
+
+    private void jBtnSchedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSchedActionPerformed
+        statusMessageLabel.setText("");
+       NumberFormat curr = NumberFormat.getCurrencyInstance();
+       NumberFormat pct = NumberFormat.getPercentInstance();
+       
+       //Build Table
+       
+       JTable sched = null;
+       DefaultTableModel mod;
+       
+       String[] cols;
+       String[][]t; //upper left cell = t[0][0]
+       String title;
+       
+       if(jradAnnuity.isSelected()){
+           //build annuity schedule popup
+           title = "Annuity Scheudle";
+           
+           cols = new String[] {"Month","Beg.Bal","Deposit","Rate",
+           "Int.Earned","End Bal"};
+           
+           t = new String[][6];
+           
+       }else if(jradLoan.isSelected()){
+           //build loan
+       }else{
+           statusMessageLabel.setText("No financial operation selected!");
+           return;
+       }
+       
+               
+    }//GEN-LAST:event_jBtnSchedActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
