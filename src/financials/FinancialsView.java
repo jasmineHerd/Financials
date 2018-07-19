@@ -488,6 +488,9 @@ public class FinancialsView extends FrameView {
        }else if(jradLoan.isSelected()){
            //build loan
            title = "Loan Schedule";
+           cols = new String[] {"Month","Beg.Bal","Payment","Int.Chg","End.Bal"};
+           
+           t = new String[ln.getTerm()][5];
            
        }else{
            statusMessageLabel.setText("No financial operation selected!");
