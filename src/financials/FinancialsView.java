@@ -474,6 +474,9 @@ public class FinancialsView extends FrameView {
        JDialog dg = new JDialog();
        dg.add(sp);
        dg.setTitle(title);
+       dg.setBounds(150,400,600,300);
+       dg.setVisible(true);
+       
                
     }//GEN-LAST:event_jBtnSchedActionPerformed
 
