@@ -441,7 +441,7 @@ public class FinancialsView extends FrameView {
        DefaultTableModel mod;
        
        String[] cols;
-       String[][]t; //upper left cell = t[0][0]
+       String[][] t; //upper left cell = t[0][0]
        String title;
        
        if(jradAnnuity.isSelected()){
@@ -455,10 +455,20 @@ public class FinancialsView extends FrameView {
            mod =new DefaultTableModel(t,cols);//model
            sched = new JTable(mod);
         ///////////////////////////////////////////////////   
-           //fill mod table
+           //fill mod table 
            for(int i = 0;i<an.getTerm();i++){
                //fill all columns for row = i
               sched.setValueAt(i+1, i, 0);//column is always 0?
+              sched.setValueAt(
+                                an.getBegBal(i+1),i,1);
+              sched.setValueAt(
+                                an.getAmt(),i,2);
+              sched.setValueAt(
+                                an.getRate(),i,3);
+              sched.setValueAt(
+                                an.getIntEarned(i+1), i, 4);
+              sched.setValueAt(
+                                an.getEndBal(i+1),i,5);
            }
            
        }else if(jradLoan.isSelected()){

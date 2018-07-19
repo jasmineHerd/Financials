@@ -95,4 +95,43 @@ public class Annuity {
     public int getTerm(){
         return this.term;
     }
+    public double getBegBal(int mo){
+        if(!built){
+            buildAnnuity();
+            if(!built){
+                return -1;
+            }
+        }
+        if(mo < 1 || mo > this.term){
+            //month is out of range
+            return -1;
+        }
+        return this.begbal[mo-1];//remember *fences* array-1 for last index
+    }
+    public double getIntEarned(int mo){
+         if(!built){
+            buildAnnuity();
+            if(!built){
+                return -1;
+            }
+        }
+        if(mo < 1 || mo > this.term){
+            //month is out of range
+            return -1;
+        }
+        return this.intearn[mo-1];
+    }
+    public double getEndBal(int mo){
+         if(!built){
+            buildAnnuity();
+            if(!built){
+                return -1;
+            }
+        }
+        if(mo < 1 || mo > this.term){
+            //month is out of range
+            return -1;
+        }
+        return this.endbal[mo-1];
+    }
 }
