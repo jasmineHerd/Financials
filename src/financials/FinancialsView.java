@@ -11,6 +11,7 @@ import java.text.NumberFormat;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
@@ -24,7 +25,9 @@ import org.jdesktop.application.TaskMonitor;
  * The application's main frame.
  */
 public class FinancialsView extends FrameView {
-
+    //globals for form
+    Annuity an;
+    Loan ln;
     public FinancialsView(SingleFrameApplication app) {
         super(app);
 
@@ -397,7 +400,7 @@ public class FinancialsView extends FrameView {
         if(jradAnnuity.isSelected()){
             //send values to Annuity class via instantiation
             
-            Annuity an = new Annuity(a, r,t);
+            an = new Annuity(a, r,t);
             if(!an.getErrorMsg().isEmpty()){
                 statusMessageLabel.setText(an.getErrorMsg());
             }else{
@@ -427,10 +430,11 @@ public class FinancialsView extends FrameView {
     }//GEN-LAST:event_jBtnClearActionPerformed
 
     private void jBtnSchedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSchedActionPerformed
-        statusMessageLabel.setText("");
+       statusMessageLabel.setText("");
        NumberFormat curr = NumberFormat.getCurrencyInstance();
        NumberFormat pct = NumberFormat.getPercentInstance();
        
+       ///////////////////////////////////////////////////////
        //Build Table
        
        JTable sched = null;
@@ -447,15 +451,29 @@ public class FinancialsView extends FrameView {
            cols = new String[] {"Month","Beg.Bal","Deposit","Rate",
            "Int.Earned","End Bal"};
            
-           t = new String[][6];
+           t = new String [an.getTerm()][6];
+           mod =new DefaultTableModel(t,cols);//model
+           sched = new JTable(mod);
+        ///////////////////////////////////////////////////   
+           //fill mod table
+           for(int i = 0;i<an.getTerm();i++){
+               //fill all columns for row = i
+              sched.setValueAt(i+1, i, 0);//column is always 0?
+           }
            
        }else if(jradLoan.isSelected()){
            //build loan
+           title = "Loan Schedule";
+           
        }else{
            statusMessageLabel.setText("No financial operation selected!");
            return;
        }
-       
+       //display sched table
+       JScrollPane sp = new JScrollPane(sched);
+       JDialog dg = new JDialog();
+       dg.add(sp);
+       dg.setTitle(title);
                
     }//GEN-LAST:event_jBtnSchedActionPerformed
 

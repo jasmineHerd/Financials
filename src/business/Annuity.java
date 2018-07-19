@@ -86,4 +86,13 @@ public class Annuity {
         }
         return -999;
     }
+    public double getAmt(){
+        return this.amt;
+    }
+    public double getRate(){
+        return this.rate;
+    }
+    public int getTerm(){
+        return this.term;
+    }
 }

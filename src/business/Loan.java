@@ -18,37 +18,7 @@ this.i = i;
 this.p = p;
 
 }
-getPrincipal(){
-//return original loan amount
-}
 
-
-getIntRate(){
-//return origin annual interest
-}
-
-getTerm(){
-    //return months of the loan
-}
-
-getMoPmt(){
-    //returns calculated monthly payment for the loan
-}
-
-public double getBegBal(x){
-    //returns beginning balance for month(x)
-    return 0;
-}
-
-public double getIntChg(x){
-    //returns the interest charge for month(x)
-    return 0;
-}
-
-public double getEndBal(x){
-    //returns ending balance for month(X)
-    return 0;
-}
 }
 
 
