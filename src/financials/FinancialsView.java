@@ -409,6 +409,18 @@ public class FinancialsView extends FrameView {
                 jBtnSched.setEnabled(true);
             }
             
+        }else if(jradLoan.isSelected()){
+            //instantiate loan
+            ln = new Loan(a,r,t);
+            if(!ln.getErrorMsg().isEmpty()){
+                statusMessageLabel.setText(ln.getErrorMsg());
+            }else{
+                jtxtResult.setText(
+                curr.format(ln.getResult()));
+                jBtnSched.setEnabled(true);
+            }
+        }else{
+            statusMessageLabel.setText("No financial operation selected");
         }
         
     }//GEN-LAST:event_jBtnCalcActionPerformed
@@ -433,6 +445,8 @@ public class FinancialsView extends FrameView {
        statusMessageLabel.setText("");
        NumberFormat curr = NumberFormat.getCurrencyInstance();
        NumberFormat pct = NumberFormat.getPercentInstance();
+       pct.setMinimumFractionDigits(3);
+       pct.setMaximumFractionDigits(3);
        
        ///////////////////////////////////////////////////////
        //Build Table
@@ -460,15 +474,15 @@ public class FinancialsView extends FrameView {
                //fill all columns for row = i
               sched.setValueAt(i+1, i, 0);//column is always 0?
               sched.setValueAt(
-                                an.getBegBal(i+1),i,1);
+                                curr.format(an.getBegBal(i+1)),i,1);
               sched.setValueAt(
-                                an.getAmt(),i,2);
+                                curr.format(an.getAmt()),i,2);
               sched.setValueAt(
-                                an.getRate(),i,3);
+                                pct.format(an.getRate()),i,3);
               sched.setValueAt(
-                                an.getIntEarned(i+1), i, 4);
+                                curr.format(an.getIntEarned(i+1)), i, 4);
               sched.setValueAt(
-                                an.getEndBal(i+1),i,5);
+                                curr.format(an.getEndBal(i+1)),i,5);
            }
            
        }else if(jradLoan.isSelected()){

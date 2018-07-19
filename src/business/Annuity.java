@@ -51,6 +51,9 @@ public class Annuity {
         }
         return valuesok;
     }//isValid
+    
+    
+    
     private void buildAnnuity(){
         
         this.errmsg="";
