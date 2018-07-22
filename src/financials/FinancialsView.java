@@ -120,7 +120,7 @@ public class FinancialsView extends FrameView {
         jtxtResult = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jBtnCalc = new javax.swing.JButton();
-        jBtnSched = new javax.swing.JButton();
+        jbtnSched = new javax.swing.JButton();
         jBtnClear = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
@@ -198,12 +198,12 @@ public class FinancialsView extends FrameView {
             }
         });
 
-        jBtnSched.setText(resourceMap.getString("jBtnSched.text")); // NOI18N
-        jBtnSched.setEnabled(false);
-        jBtnSched.setName("jBtnSched"); // NOI18N
-        jBtnSched.addActionListener(new java.awt.event.ActionListener() {
+        jbtnSched.setText(resourceMap.getString("jbtnSched.text")); // NOI18N
+        jbtnSched.setEnabled(false);
+        jbtnSched.setName("jbtnSched"); // NOI18N
+        jbtnSched.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnSchedActionPerformed(evt);
+                jbtnSchedActionPerformed(evt);
             }
         });
 
@@ -222,36 +222,40 @@ public class FinancialsView extends FrameView {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jBtnClear)
-                            .addComponent(jBtnSched)))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnCalc)
-                            .addComponent(jtxtRate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                        .addComponent(jLabel1)
                         .addGap(56, 56, 56)
                         .addComponent(jradAnnuity)
                         .addGap(54, 54, 54)
                         .addComponent(jradLoan))
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtxtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(45, 45, 45)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(154, 154, 154)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtxtRate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtxtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jBtnCalc))
+                                    .addComponent(jtxtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addGap(193, 193, 193))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jBtnClear))
+                                    .addComponent(jbtnSched))))))
                 .addContainerGap(228, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
@@ -263,7 +267,7 @@ public class FinancialsView extends FrameView {
                         .addComponent(jradAnnuity)
                         .addComponent(jradLoan))
                     .addComponent(jLabel1))
-                .addGap(67, 67, 67)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jtxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -275,17 +279,20 @@ public class FinancialsView extends FrameView {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtxtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(jBtnCalc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jBtnSched)
+                .addComponent(jBtnCalc)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jtxtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbtnSched)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBtnClear)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
 
         menuBar.setName("menuBar"); // NOI18N
@@ -361,66 +368,61 @@ public class FinancialsView extends FrameView {
     }//GEN-LAST:event_jradAnnuityItemStateChanged
 
     private void jradLoanItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jradLoanItemStateChanged
-            if(jradLoan.isSelected()){
+        if(jradLoan.isSelected()){
             jLabel2.setText(Loan.AMTDESC);
-            jLabel5.setText(Loan.RESULTDESC);}
+            jLabel5.setText(Loan.RESULTDESC);
+        }
     }//GEN-LAST:event_jradLoanItemStateChanged
 
     private void jBtnCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCalcActionPerformed
+        double a,r;
+        int t;
         NumberFormat curr = NumberFormat.getCurrencyInstance();
-        double a,r;//amount,result
-        int t;//term
         statusMessageLabel.setText("");
         try{
-            
             a = Double.parseDouble(jtxtAmount.getText());
-        
         }catch(NumberFormatException e){
-            statusMessageLabel.setText("Amount error: " + e.getMessage());
+            statusMessageLabel.setText("Amount error: "+ e.getMessage());
             jtxtAmount.requestFocusInWindow();
             return;
         }
-        
         try{
-            r=Double.parseDouble(jtxtRate.getText());
+            r = Double.parseDouble(jtxtRate.getText());
         }catch(NumberFormatException e){
-            statusMessageLabel.setText("Rate error: "+e.getMessage());
+            statusMessageLabel.setText("Rate error: " + e.getMessage());
             jtxtRate.requestFocusInWindow();
-            return;                   
+            return;
         }
-        
         try{
-            t= Integer.parseInt(jtxtTerm.getText());
-            
-        }catch(NumberFormatException e){
-            statusMessageLabel.setText("Term error: "+e.getMessage());
+            t = Integer.parseInt(jtxtTerm.getText());
+         
+        }catch(NumberFormatException e ){
+            statusMessageLabel.setText("Term error: " + e.getMessage());
             jtxtTerm.requestFocusInWindow();
-            return;                   
+            return;
         }
         if(jradAnnuity.isSelected()){
-            //send values to Annuity class via instantiation
-            
-            an = new Annuity(a, r,t);
+            //send values to Annuity.java Class via instantiation
+            an = new Annuity(a,r,t);
             if(!an.getErrorMsg().isEmpty()){
                 statusMessageLabel.setText(an.getErrorMsg());
             }else{
                 jtxtResult.setText(
-                curr.format(an.getResult()) );
-                jBtnSched.setEnabled(true);
+                        curr.format(an.getResult()));
+                jbtnSched.setEnabled(true);
             }
-            
         }else if(jradLoan.isSelected()){
-            //instantiate loan
-            ln = new Loan(a,r,t);
+           //loan
+            ln = new Loan(a,r,t);  
             if(!ln.getErrorMsg().isEmpty()){
                 statusMessageLabel.setText(ln.getErrorMsg());
             }else{
                 jtxtResult.setText(
                 curr.format(ln.getResult()));
-                jBtnSched.setEnabled(true);
+                jbtnSched.setEnabled(true);
             }
         }else{
-            statusMessageLabel.setText("No financial operation selected");
+            statusMessageLabel.setText("No financial operation selected.");
         }
         
     }//GEN-LAST:event_jBtnCalcActionPerformed
@@ -434,89 +436,82 @@ public class FinancialsView extends FrameView {
         buttonGroup1.clearSelection();
         jLabel2.setText("Amount:");
         jLabel5.setText("Result:");
-        jBtnSched.setEnabled(false);
+        jbtnSched.setEnabled(false);
         
                 
            
 
     }//GEN-LAST:event_jBtnClearActionPerformed
 
-    private void jBtnSchedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSchedActionPerformed
-       statusMessageLabel.setText("");
-       NumberFormat curr = NumberFormat.getCurrencyInstance();
-       NumberFormat pct = NumberFormat.getPercentInstance();
-       pct.setMinimumFractionDigits(3);
-       pct.setMaximumFractionDigits(3);
-       
-       ///////////////////////////////////////////////////////
-       //Build Table
-       
-       JTable sched = null;
-       DefaultTableModel mod;
-       
-       String[] cols;
-       String[][] t; //upper left cell = t[0][0]
-       String title;
-       
-       if(jradAnnuity.isSelected()){
-           //build annuity schedule popup
-           title = "Annuity Scheudle";
-           
-           cols = new String[] {"Month","Beg.Bal","Deposit","Rate",
-           "Int.Earned","End Bal"};
-           
-           t = new String [an.getTerm()][6];
-           mod =new DefaultTableModel(t,cols);//model
-           sched = new JTable(mod);
-        ///////////////////////////////////////////////////   
-           //fill mod table 
-           for(int i = 0;i<an.getTerm();i++){
-               //fill all columns for row = i
-              sched.setValueAt(i+1, i, 0);//column is always 0?
-              sched.setValueAt(
-                                curr.format(an.getBegBal(i+1)),i,1);
-              sched.setValueAt(
-                                curr.format(an.getAmt()),i,2);
-              sched.setValueAt(
-                                pct.format(an.getRate()),i,3);
-              sched.setValueAt(
-                                curr.format(an.getIntEarned(i+1)), i, 4);
-              sched.setValueAt(
-                                curr.format(an.getEndBal(i+1)),i,5);
-           }
-           
-       }else if(jradLoan.isSelected()){
-           //build loan
-           title = "Loan Schedule";
-           cols = new String[] {"Month","Beg.Bal","Payment","Int.Chg","End.Bal"};
-           
-           t = new String[ln.getTerm()][5];
-           
-       }else{
-           statusMessageLabel.setText("No financial operation selected!");
-           return;
-       }
-       //display sched table
+    private void jbtnSchedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSchedActionPerformed
+        statusMessageLabel.setText("");
+        NumberFormat curr = NumberFormat.getCurrencyInstance();
+        NumberFormat pct = NumberFormat.getPercentInstance();
+        pct.setMaximumFractionDigits(3);
+        pct.setMinimumFractionDigits(3);
+        
+        JTable sched = null;
+        DefaultTableModel mod;
+        
+        String[]cols;
+        //row column
+        String[][] t;//t = upper left
+        String title;
+        
+        if(jradAnnuity.isSelected()){
+            //build annuity popup
+            title = "Annuity Schedule";
+            cols = new String[] {"Month","Beg Bal", "Deposit","Rate","Int.Earned","End.Bal"};
+            t = new String[an.getTerm()][6];
+            mod = new DefaultTableModel(t,cols);
+            sched = new JTable(mod);
+            for(int i = 0 ; i< an.getTerm(); i++){
+                //fill all columns for row = i
+                sched.setValueAt(i+1 , i, 0);
+                sched.setValueAt(curr.format(an.getBegBal(i+1)), i, 1);
+                sched.setValueAt( curr.format(an.getAmt()),i,2);
+                sched.setValueAt(pct.format(an.getRate()), i, 3);
+                sched.setValueAt(curr.format(an.getIntEarn(i+1)),i,4);
+                sched.setValueAt(curr.format(an.getEndBal(i+1)),i,5);
+                //cell renderer?
+            }
+            
+        }else if(jradLoan.isSelected()){
+            //build loan popup
+            title = "Loan Schedule";
+            cols = new String[]  { "Month","Beg Bal","Payment",
+            "Int.Chg","End Bal"};
+            t = new String[ln.getTerm()][5];
+            mod = new DefaultTableModel(t,cols);
+            sched = new JTable(mod);
+            //fill all cells of sched using get from loan.java
+            //for loop to fill cells[
+                    
+        }else{
+            statusMessageLabel.setText("No Financial Operation Selected");
+            return;
+        }
+                
+       //display table sched
        JScrollPane sp = new JScrollPane(sched);
        JDialog dg = new JDialog();
        dg.add(sp);
        dg.setTitle(title);
        dg.setBounds(150,400,600,300);
        dg.setVisible(true);
-       
                
-    }//GEN-LAST:event_jBtnSchedActionPerformed
+    }//GEN-LAST:event_jbtnSchedActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jBtnCalc;
     private javax.swing.JButton jBtnClear;
-    private javax.swing.JButton jBtnSched;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jbtnSched;
     private javax.swing.JRadioButton jradAnnuity;
     private javax.swing.JRadioButton jradLoan;
     private javax.swing.JTextField jtxtAmount;
