@@ -106,14 +106,19 @@ public class Loan {
             
             this.begbal[0] = this.amt;
             this.intchg[0]=this.begbal[0] * morate;
+            this.endbal[0]=(this.begbal[0])-(this.mopmt-this.intchg[0]);
             
             for(int i =0;i<this.term;i++){
                 if(i>0){
                     this.begbal[i] = this.begbal[i-1]-this.mopmt;
                     this.intchg[i] = this.endbal[i-1]*morate;
+                   // this.endbal[i]=(this.begbal[i-1])-(this.mopmt-this.intchg[i-1]);
+                   this.endbal[i]= endbal[i-1]-(this.mopmt-this.intchg[i]) ;
                 }
+                //ending balance wrong
+               // this.endbal[i]=(this.begbal[i]+this.intchg[i])-this.mopmt;
+                //this.endbal[i]=(this.begbal[i])-(this.mopmt-this.intchg[i]);
                 
-                this.endbal[i]=(this.begbal[i]+this.intchg[i])-this.mopmt;
             }
             
             
