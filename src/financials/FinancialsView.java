@@ -485,6 +485,13 @@ public class FinancialsView extends FrameView {
             mod = new DefaultTableModel(t,cols);
             sched = new JTable(mod);
             //fill all cells of sched using get from loan.java
+            for(int i = 0 ; i< ln.getTerm(); i++){
+                //fill all columns for row = i
+                sched.setValueAt(i+1 , i, 0);//Month
+                sched.setValueAt(curr.format(ln.getBegBal(i+1)), i, 1);
+                sched.setValueAt( curr.format(ln.getResult()),i,2);
+                sched.setValueAt(curr.format(ln.getIntChg(i+1)),i,3);
+                sched.setValueAt(curr.format(ln.getEndBal(i+1)),i,4);}
             //for loop to fill cells[
                     
         }else{
