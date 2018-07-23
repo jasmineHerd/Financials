@@ -438,6 +438,8 @@ public class FinancialsView extends FrameView {
         jLabel5.setText("Result:");
         jbtnSched.setEnabled(false);
         
+        
+        
                 
            
 
@@ -493,6 +495,7 @@ public class FinancialsView extends FrameView {
                 sched.setValueAt(curr.format(ln.getIntChg(i+1)),i,3);
                 sched.setValueAt(curr.format(ln.getEndBal(i+1)),i,4);}
             //for loop to fill cells[
+
                     
         }else{
             statusMessageLabel.setText("No Financial Operation Selected");
@@ -506,6 +509,8 @@ public class FinancialsView extends FrameView {
        dg.setTitle(title);
        dg.setBounds(150,400,600,300);
        dg.setVisible(true);
+
+             
                
     }//GEN-LAST:event_jbtnSchedActionPerformed
 
